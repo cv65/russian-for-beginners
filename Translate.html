@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link href="style2.css" rel="stylesheet" type="text/css">
+	<title>Russian for Beginners - Dictionary</title>
+
+</head><meta charset="utf-8"/>
+<body >
+	
+	<table id="navMenu" align="left">
+		<thead>
+		<tr>
+			<th><strong><a href="Home.html">Home</a><strong></td>
+		</tr>
+		</thead>
+		<tr>
+			<td><strong><a href="Translate.html">Dictionary</a><strong></td>
+		</tr>
+		<tr>
+			<td><strong><a href="Alphabet.html">Alphabet</a><strong></td>
+		</tr>
+		<tr>
+			<td><strong><a href="Alpha1.html">Alpha 1</a><strong></td>
+		</tr>
+		<tr>
+			<td><strong><a href="Alpha2.html">Alpha 2</a><strong></td>
+		</tr>
+		<tr>
+			<td><strong><a href="Alpha3.html">Alpha 3</a><strong></td>
+		</tr>
+		<tr>
+			<td><strong><a href="Alpha4.html">Alpha 4</a><strong></td>
+		</tr>
+		<tr>
+			<td><strong><a href="Alpha5.html">Alpha 5</a><strong></td>
+		</tr>
+		<tr>
+			<td><strong><a href="Alpha6.html">Alpha 6</a><strong></td>
+		</tr>
+		<tr>
+			<td><strong><a href="FirstWords.html">First Words</a><strong></td>
+		</tr>
+		<tr>
+			<td><strong><a href="Countries.html">Countries</a><strong></td>
+		</tr>
+		<tr>
+			<td><strong><a href="Numbers.html">Numbers</a><strong></td>
+		</tr>
+		<tr>
+			<td><strong><a href="Months.html">Months</a><strong></td>
+		</tr>
+		<tr>
+			<td><strong><a href="Colors.html">Colors</a><strong></td>
+		</tr>
+		<tr>
+			<td><strong><a href="Greetings.html">Greetings</a><strong></td>
+		</tr>
+		<tr>
+			<td><strong><a href="Pronouns.html">Pronouns</a><strong></td>
+		</tr>
+		<tr>
+			<td><strong><a href="Verbs.html">Verbs</a><strong></td>
+		</tr>
+		<tr>
+			<td><strong><a href="Places.html">Places</a><strong></td>
+		</tr>
+		<tr>
+			<td><strong><a href="Credits.html">Credits</a><strong></td>
+		</tr>
+	</table>
+	
+	<div id="backSheet">
+	
+	<a href="Home.html"><h1>RUSSIAN FOR BEGINNERS</h1></a>
+	<h3 >Dictionary</h3>
+
+	<h1></h1>
+	<h5></h5>
+		
+	
+	<form onsubmit="return myTranslate()">
+	Enter the word you would like to translate.
+	<input type="text" name="inWord" id="inWord">
+	<input type="submit" value="Translate">
+	</form>
+	
+	
+	
+<p id="outString"></p>
+
+<script>
+	var words=[
+	["word","слово","FirstWords.html", "slovo_FirstWords.mp3"],
+	["yes","да","FirstWords.html", "Da_FirstWords.mp3"],
+	["no","нет","FirstWords.html","Nyet_FirstWords.mp3"],
+	["it","это","FirstWords.html","Eto_FirstWords.mp3"],
+	["and","и","FirstWords.html","I_FirstWords.mp3"],
+	["or","или","FirstWords.html","Ili_FirstWords.mp3"],
+	
+	
+	["country","страна","Countries.html","Strana_Countries.mp3"],
+	["america","америка","Countries.html","Amyerika_Countries.mp3"],
+	["belarus","беларусь","Countries.html","Belarus\'_Countries.mp3"],
+	["vietnam","вьетнам","Countries.html","V\'yetnam_Countries.mp3"],
+	["germany","германия","Countries.html","Germaniya_Countries.mp3"],
+	["india","индия","Countries.html","Indiya_Countries.mp3"],
+	["ireland","ирландия","Countries.html","Irlandiya_Countries.mp3"],
+	["italy","италия","Countries.html","Italiya_Countries.mp3"],
+	["kazakhstan","казахстан","Countries.html","Kazakhstan_Countries.mp3"],
+	["canada","канада","Countries.html","Kanada_Countries.mp3"],
+	["cuba","куба","Countries.html","Kuba_Countries.mp3"],
+	["russia","россия","Countries.html","Rossiya_Countries.mp3"],
+	["ukraine","украина","Countries.html","Ukraina_Countries.mp3"],
+	["france","франция","Countries.html","Frantsiya_Countries.mp3"],
+	["jamaica","ямайка","Countries.html","Yamayka_Countries.mp3"],
+	
+	
+	["number","число","Numbers.html","Chislo_Numbers.mp3"],
+	["zero","ноль","Numbers.html","Nol\'_Numbers.mp3"],
+	["one","один","Numbers.html","Odin_Numbers.mp3"],
+	["two","два","Numbers.html","Dva_Numbers.mp3"],
+	["three","три","Numbers.html","Tri_Numbers.mp3"],
+	["four","четыре","Numbers.html","Chetyrye_Numbers.mp3"],
+	["five","пять","Numbers.html","Pyat\'_Numbers.mp3"],
+	["six","шесть","Numbers.html","Shyest\'_Numbers.mp3"],
+	["seven","семь","Numbers.html","Syem\'_Numbers.mp3"],
+	["eight","восемь","Numbers.html","Vosem\'_Numbers.mp3"],
+	["nine","девять","Numbers.html","Dyevyat\'_Numbers.mp3"],
+	["ten","десять","Numbers.html","Dyesyat\'_Numbers.mp3"],
+	
+	["eleven","одиннадцать","Numbers.html","Odinnadtsat\'_Numbers.mp3"],
+	["twelve","двенадцать","Numbers.html","Dvenadtsat\'_Numbers.mp3"],
+	["thirteen","тринадцать","Numbers.html","Trinadtsat\'_Numbers.mp3"],
+	["fourteen","четырнадцать","Numbers.html","Chetyrnadtsat\'_Numbers.mp3"],
+	["fifteen","пятнадцать","Numbers.html","Pyatnadtsat\'_Numbers.mp3"],
+	["sixteen","шестнадцать","Numbers.html","Shestnadtsat\'_Numbers.mp3"],
+	["seventeen","семнадцать","Numbers.html","Semnadtsat\'_Numbers.mp3"],
+	["eighteen","восемнадцать","Numbers.html","Vosemnadtsat\'_Numbers.mp3"],
+	["nineteen","девятнадцать","Numbers.html","Devyatnadtsat\'_Numbers.mp3"],
+	
+	["twenty","двадцать","Numbers.html","Dvadtsat\'_Numbers.mp3"],
+	["thirty","тридцать","Numbers.html","Tridtsat\'_Numbers.mp3"],
+	["forty","сорок","Numbers.html","Sorok_Numbers.mp3"],
+	["fifty","пятьдесят","Numbers.html","Pyat\'desyat_Numbers.mp3"],
+	["sixty","шестьдесят","Numbers.html","Shest\'desyat_Numbers.mp3"],
+	["seventy","семьдесят","Numbers.html","Sem\'desyat_Numbers.mp3"],
+	["eighty","восемьдесят","Numbers.html","Vosem\'desyat_Numbers.mp3"],
+	["ninety","девяносто","Numbers.html","Devyanosto.mp3"],
+	
+	["one hundred","сто","Numbers.html","Sto_Numbers.mp3"],
+	["two hundred","двести","Numbers.html","Dvyesti_Numbers.mp3"],
+	["three hundred","триста","Numbers.html","Trista_Numbers.mp3"],
+	["four hundred","четыреста","Numbers.html","Chetyresta_Numbers.mp3"],
+	["five hundred","пятьсот","Numbers.html","Pyat\'sot_Numbers.mp3"],
+	["six hundred","шестьсот","Numbers.html","Shest\'sot_Numbers.mp3"],
+	["seven hundred","семьсот","Numbers.html","Sem\'sot_Numbers.mp3"],
+	["eight hundred","восемьсот","Numbers.html","Vosem\'sot_Numbers.mp3"],
+	["nine hundred","девятьсот","Numbers.html","Devyat\'sot_Numbers.mp3"],
+	
+	["one thousand","тысяча","Numbers.html","Tysyacha_Numbers.mp3"],
+	["one million","миллион","Numbers.html","Million_Numbers.mp3"],
+	["one billion","миллиард","Numbers.html","Milliard_Numbers.mp3"],
+	["one trillion","триллион","Numbers.html","Trillion_Numbers.mp3"],
+		
+	
+	["month","месяц","Months.html","Myesyats_Months.mp3"],
+	["january","январь","Months.html","Yanvar\'_Months.mp3"],
+	["february","февраль","Months.html","Fevral\'_Months.mp3"],
+	["march","март","Months.html","Mart_Months.mp3"],
+	["april","апрель","Months.html","Apryel\'_Months.mp3"],
+	["may","май","Months.html","May_Months.mp3"],
+	["june","июнь","Months.html","Iyun\'_Months.mp3"],
+	["july","июль","Months.html","Iyul\'_Months.mp3"],
+	["august","август","Months.html","Avgust_Months.mp3"],
+	["september","сентябрь","Months.html","Sentyabr\'_Months.mp3"],
+	["october","октябрь","Months.html","Oktyabr\'_Months.mp3"],
+	["november","ноябрь","Months.html","Noyabr\'_Months.mp3"],
+	["december","декабрь","Months.html","Dekabr\'_Months.mp3"],
+
+	["season","время года","Months.html","VryemyaGoda_Months.mp3"],
+	["spring","весна","Months.html","Vesna_Months.mp3"],
+	["summer","лето","Months.html","Lyeto_Months.mp3"],
+	["autumn","осень","Months.html","Osen\'_Months.mp3"],
+	["winter","зима","Months.html","Zima_Months.mp3"],
+	
+		
+	["color","цвет","Colors.html","Tsvyet_Colors.mp3"],
+	["red","красный","Colors.html","Krasnyy_Colors.mp3"],
+	["orange","оранжевый","Colors.html","Oranzhevyy_Colors.mp3"],
+	["yellow","жёлтый","Colors.html","Zhyoltyy_Colors.mp3"],
+	["green","зелёный","Colors.html","Zelyonyy_Colors.mp3"],
+	["light blue","голубой","Colors.html","Goluboy_Colors.mp3"],
+	["dark blue","синий","Colors.html","Siniy_Colors.mp3"],
+	["violet","фиолетовый","Colors.html","Fiolyetovyy_Colors.mp3"],
+	["pink","розовый","Colors.html","Rozovyy_Colors.mp3"],
+	["beige","бежевый","Colors.html","Byezhevyy_Colors.mp3"],
+	["brown","коричневый","Colors.html","Korichnevyy_Colors.mp3"],
+	["white","белый","Colors.html","Byelyy_Colors.mp3"],
+	["grey","серый","Colors.html","Syeryy_Colors.mp3"],
+	["black","чёрный","Colors.html","Chyornyy_Colors.mp3"],
+	
+	
+	["greeting","приветствие","Greetings.html","Privyetstviye_Greetings.mp3"],
+	["hello","здравствуйте","Greetings.html","Zdravstvuytye_Greetings.mp3"],
+	["hi","привет","Greetings.html","Privyet_Greetings.mp3"],
+	["good morning","доброе утро","Greetings.html","DobroyeUtro_Greetings.mp3"],
+	["good day","добрый день","Greetings.html","DobryyDyen\'_Greetings.mp3"],
+	["good evening","добрый вечер","Greetings.html","DobryyVyecher_Greetings.mp3"],
+	["how are you?","как дела","Greetings.html","KakDela_Greetings.mp3"],
+	["goodbye","до свидания","Greetings.html","DoSvidaniya_Greetings.mp3"],
+	["bye","пока","Greetings.html","Poka_Greetings.mp3"],
+	["see you later","до встречи","Greetings.html","DoVstryechi_Greetings.mp3"],
+	
+	
+	["pronoun","местоимение","Pronouns.html","Mestoimyeniye_Pronouns.mp3"],
+	["we","мы","Pronouns.html","My_Pronouns.mp3"],
+	["you","вы","Pronouns.html","Vy_Pronouns.mp3"],
+	["they","они","Pronouns.html","Oni_Pronouns.mp3"],
+	["i","я","Pronouns.html","Ya_Pronouns.mp3"],
+	["you","ты","Pronouns.html","Ty_Pronouns.mp3"],
+	["he","он","Pronouns.html","On_Pronouns.mp3"],
+	["she","она","Pronouns.html","Ona_Pronouns.mp3"],
+	
+	
+	["verb","глагол","Verbs.html","Glagol_Verbs.mp3"],
+	["to know","знать","Verbs.html","Znat\'_Verbs.mp3"],
+	["to remember","помнить","Verbs.html","Pomnit\'_Verbs.mp3"],
+	["to understand","понимать","Verbs.html","Ponimat\'_Verbs.mp3"],
+	["to want","хотеть","Verbs.html","Khotyet\'_Verbs.mp3"],
+	["to think","думать","Verbs.html","Dumat\'_Verbs.mp3"],
+	["to see","видеть","Verbs.html","Videt\'_Verbs.mp3"],
+	["to hear","слышать","Verbs.html","Slyshat\'_Verbs.mp3"],
+	["to say","сказать","Verbs.html","Skazat\'_Verbs.mp3"],
+	["to do","делать","Verbs.html","Dyelat\'_Verbs.mp3"],
+	["to work","работать","Verbs.html","Rabotat\'_Verbs.mp3"],
+	["to write","написать","Verbs.html","Napisat\'_Verbs.mp3"],
+	["to read","читать","Verbs.html","Chitat\'_Verbs.mp3"],
+	["to study","изучить","Verbs.html","Izuchit\'_Verbs.mp3"],
+	["to search \[for\]","искать","Verbs.html","Iskat\'_Verbs.mp3"],
+	["to wait \[for\]","ждать","Verbs.html","Zhdat\'_Verbs.mp3"],
+	["to take","брать","Verbs.html","Brat\'_Verbs.mp3"],
+	["to give","дать","Verbs.html","Dat\'_Verbs.mp3"],
+	
+	
+	["place","место","Places.html","Myesto_Places.mp3"],
+	["airport","аэропорт","Places.html","Aeroport_Places.mp3"],
+	["train station","вокзал","Places.html","Vokzal_Places.mp3"],
+	["street","улица","Places.html","Ulitsa_Places.mp3"],
+	["square","площадь","Places.html","Ploschad\'_Places.mp3"],
+	["park","парк","Places.html","Park_Places.mp3"],
+	["toilet (bathroom)","туалет","Places.html","Tualyet_Places.mp3"],
+	["hotel","гостница","Places.html","Gostnitsa_Places.mp3"],
+	["apartment","квартира","Places.html","Kvartira_Places.mp3"],
+	["house","дом","Places.html","Dom_Places.mp3"],
+	["store","магазин","Places.html","Magazin_Places.mp3"],
+	["supermarket","супермаркет","Places.html","Supermarket_Places.mp3"],
+	["restaurant","ресторан","Places.html","Restoran_Places.mp3"],
+	["library","библиотека","Places.html","Bibliotyeka_Places.mp3"],
+	["hospital","больница","Places.html","Bol\'nitsa_Places.mp3"],
+	];
+
+var outString=document.getElementById("outString");
+	
+function myTranslate() {
+    var i;
+	var inWord = document.getElementById("inWord");
+	var word = inWord.value.toLowerCase();
+	console.log("word="+word);
+	
+	
+	
+	for (i=0;i<words.length;i++){
+		if (word == words[i][0]){
+			
+			outString.innerHTML="The Russian word for \"" + word + "\" is \"" + words[i][1] + ".\" <br> For more information, visit ";
+			
+			link=document.createElement("a");
+			link.href=words[i][2];
+			link.textContent=words[i][2].replace(/\..+$/,"");
+			outString.appendChild(link);
+			playAudio(i);
+			break;
+		}
+	}
+	
+	if (i==words.length){
+	//If the previous search failed, try again with Russian words.
+		for (i=0;i<words.length;i++){
+			if (word == words[i][1]){
+			
+				outString.innerHTML="The English word for \"" + word + "\" is \"" + words[i][0] + ".\" <br> For more information, visit ";
+			
+				link=document.createElement("a");
+				link.href=words[i][2];
+				link.textContent=words[i][2].replace(/\..+$/,"");
+				outString.appendChild(link);
+				playAudio(i);
+				break;
+			}
+		
+			
+		}
+		if (i==words.length){
+			outString.innerHTML="The translation for \"" + word + "\" was not found.";
+			
+		}
+	}
+    
+return false;
+}
+</script>
+<script>
+	function playAudio(i){
+		console.log('playAudio '+i);
+		console.log(event.currentTarget);
+		
+		var aud=document.getElementById('а');
+		aud.src=words[i][3];
+		aud.play();
+	}
+	</script>
+	<audio id='а'>
+		<source type="audio/mpeg">
+	Your browser does not support the audio element.
+	</audio>
+	<h5>© 2015-2016 Kathryn Vagnini</h5>
+	
+</div>
+</body>
+</html>
