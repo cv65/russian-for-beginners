@@ -1,8 +1,11 @@
 Russian for Beginners
 
+To view the website go to [Russian for Beginners](https://cv65.github.io/russian-for-beginners/Home.html)
+
 Setup instructions:
 
 create a new repository on the command line
+```
 echo "# russian-for-beginners" >> README.md
 git init
 git add README.md
@@ -18,4 +21,4 @@ git push -u origin master
   601  cat ~/.ssh/id_rsa.pub
   602  git push -u origin master
   603  vi README.md
-
+```
